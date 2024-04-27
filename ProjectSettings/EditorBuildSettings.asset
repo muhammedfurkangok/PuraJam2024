@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 566e7e7cb5461ec41a124ba76221151f
+    path: Assets/Scenes/MainMenu.unity
+    guid: c9ac8409c7730cb499ea06664510a827
+  - enabled: 1
+    path: Assets/Scenes/OzgurTestGameScene.unity
+    guid: f0894b2679f850b4bb45383437055de4
+  - enabled: 1
+    path: Assets/Scenes/DisconnectScene.unity
+    guid: be49ee859d38fe9449efcec4aed1fc18
   m_configObjects: {}
