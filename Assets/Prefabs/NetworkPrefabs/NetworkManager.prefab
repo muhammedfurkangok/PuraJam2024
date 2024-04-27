@@ -55,7 +55,7 @@ MonoBehaviour:
   autoStartServerBuild: 0
   autoConnectClientBuild: 0
   offlineScene: Assets/Scenes/DisconnectScene.unity
-  onlineScene: Assets/OzgurTest/GameScene.unity
+  onlineScene: Assets/Scenes/OzgurTestGameScene.unity
   transport: {fileID: 5773571887211221376}
   networkAddress: localhost
   maxConnections: 100
