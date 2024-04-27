@@ -54,8 +54,8 @@ MonoBehaviour:
   sendRate: 60
   autoStartServerBuild: 0
   autoConnectClientBuild: 0
-  offlineScene: Assets/OzgurTest/DisconnectScene.unity
-  onlineScene: Assets/OzgurTest/GameScene.unity
+  offlineScene: Assets/Scenes/DisconnectScene.unity
+  onlineScene: Assets/Scenes/OzgurTestGameScene.unity
   transport: {fileID: 5773571887211221376}
   networkAddress: localhost
   maxConnections: 100
@@ -64,7 +64,7 @@ MonoBehaviour:
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 200978621669065006, guid: ba9ea1a7cd5b42046911e3b6d2365cc6,
     type: 3}
-  autoCreatePlayer: 1
+  autoCreatePlayer: 0
   playerSpawnMethod: 0
   spawnPrefabs: []
   exceptionsDisconnect: 1
