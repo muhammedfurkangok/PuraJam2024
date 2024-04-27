@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
-    [SerializeField] private CharacterController characterControllercontroller;
+    [SerializeField] private float AnimBlendSpeed = 8.9f;
+    [SerializeField] private Rigidbody playerRigidbody;
+    [SerializeField] private Animator animator; 
     [SerializeField] private float speed = 12f;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 3f;
@@ -13,34 +15,77 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private float groundDistance = 0.4f;
     [SerializeField] private LayerMask groundMask;
 
-    private Vector3 velocity;
+    private bool _hasAnimator;
+    private int _xVelocityHash;
+    private int _zVelocityHash;
+
+    private const float _walkSpeed = 2f;
+    private const float _runSpeed = 6f;
+
+    private Vector3 _velocity;
+
     private bool isGrounded;
-  //todo düşerken gravity arttır
+    private bool isRunning;
+    private bool isMoving;
+
+    private void Start()
+    {
+        _hasAnimator = animator != null;
+        Debug.Log(animator);
+        if (_hasAnimator)
+        {
+            _xVelocityHash = Animator.StringToHash("X_Velocity");
+            _zVelocityHash = Animator.StringToHash("Y_Velocity");
+        }
+    }
+
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        
-        if(isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
-        }
-        
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         
-        Vector3 move = transform.right * x + transform.forward * z;
+        if (Input.GetKeyDown(KeyCode.LeftShift)) 
+            isRunning = true;
+        else if (Input.GetKeyUp(KeyCode.LeftShift)) 
+            isRunning = false;
         
-        characterControllercontroller.Move(move * speed * Time.deltaTime);
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        isMoving = Mathf.Abs(x) > 0.1f || Mathf.Abs(z) > 0.1f;
+        
+        if (isGrounded && _velocity.y < 0)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            _velocity.y = -2f;
         }
         
-        velocity.y += gravity * Time.deltaTime;
+        Move();
+        
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+        
+        _velocity.y += gravity * Time.deltaTime;
+        
+    }
+
+    private void Move()
+    {
+        if (!_hasAnimator) return;
+      
+        float targetSpeed = isRunning ? _runSpeed : _walkSpeed;
+        if (!isMoving) targetSpeed = 0.1f;
+
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+        Vector3 targetVelocity = (transform.right * horizontalInput + transform.forward * verticalInput) * targetSpeed;
         
         
-        characterControllercontroller.Move(velocity * Time.deltaTime);
-        
+        _velocity =  Vector3.Lerp(_velocity, targetVelocity, AnimBlendSpeed * Time.fixedDeltaTime); 
+
+        animator.SetFloat(_xVelocityHash, _velocity.x);
+        animator.SetFloat(_zVelocityHash, _velocity.z);
+
+        playerRigidbody.velocity = _velocity;
     }
 }
