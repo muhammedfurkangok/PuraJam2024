@@ -23,7 +23,12 @@ namespace Runtime.Controllers
             {
                 if(hit.collider.GetComponent<Interactable>() != null)
                 {
-                   playerUIController.UpdateUI(hit.collider.GetComponent<Interactable>().promptMessage);
+                    Interactable interactable = hit.collider.GetComponent<Interactable>();
+                   playerUIController.UpdateUI(interactable.promptMessage);
+                   if(Input.GetKeyDown(KeyCode.E))
+                   {
+                       interactable.BaseInteract();
+                   }
                 }
             }
                 
