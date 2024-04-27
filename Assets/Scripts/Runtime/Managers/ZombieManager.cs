@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
@@ -14,8 +15,8 @@ public class EnemyManager : MonoBehaviour
     public Transform player;
     public LayerMask whatIsPlayer;
 
-    public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange,isAlerted,playerInAttackRangeAlerted;
+    public float sightRange, attackRange, alertedSightRange,alertedAttackRange;
+    public bool playerInSightRange, playerInAttackRange,playerInAttackRangeAlerted,playerInSightRangeAlerted,isAlerted;
 
     #endregion
 
@@ -39,22 +40,29 @@ public class EnemyManager : MonoBehaviour
        
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-       
+        playerInAttackRangeAlerted = Physics.CheckSphere(transform.position, alertedAttackRange, whatIsPlayer);
+        playerInSightRangeAlerted = Physics.CheckSphere(transform.position, alertedSightRange, whatIsPlayer);
         
+             if (!playerInSightRange && !playerInAttackRange && !isAlerted) Patroling();
              if (playerInSightRange && !playerInAttackRange && !isAlerted) ChasePlayer();
              if (playerInSightRange && playerInAttackRange && !isAlerted) AttackPlayer();
-             if (!playerInSightRange && !playerInAttackRange && !isAlerted) Patroling();
-             if (isAlerted) GoToAlertPlace();
+             
+             if (isAlerted && !playerInSightRange) GoToAlertPlace();
+             if (playerInSightRangeAlerted && isAlerted) ChasePlayer();
+             if(playerInAttackRangeAlerted && isAlerted) AttackPlayer();
     }
 
+    [Button]
     private void GoToAlertPlace()
     {
+        //yürü  
         enemyNavMeshAgent.SetDestination(alertPlace.transform.position);
     }
 
 
     private void AttackPlayer()
     {
+        //saldır
         transform.LookAt(player);
         enemyAnimator.SetBool("Attack",true);
     }
@@ -63,7 +71,7 @@ public class EnemyManager : MonoBehaviour
 
     private void ChasePlayer()
     {
-        
+        //kos
         enemyAnimator.SetBool("Attack",false);
         enemyNavMeshAgent.SetDestination(player.position);
      
@@ -71,6 +79,7 @@ public class EnemyManager : MonoBehaviour
 
     private void Patroling()
     {
+        //yürü
         if (Vector3.Distance(transform.position, nextPosition) <= 1f)
         {
             nextPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));

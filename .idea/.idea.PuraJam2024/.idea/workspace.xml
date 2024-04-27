@@ -7,101 +7,11 @@
     <list default="true" id="76855967-b84c-4a37-a66b-27423f0cacab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PuraJam2024/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PuraJam2024/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PuraJam2024/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PuraJam2024/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Ammo_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Ammo_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Arrow_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Arrow_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Arrow_02.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Arrow_02.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Battery_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Battery_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Cog_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Cog_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Communication_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Communication_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Electric_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Electric_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Electric_02.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Electric_02.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Fire_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Fire_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Fix_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Fix_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Heart_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Heart_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Leaf_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Leaf_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Medical_02.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Medical_02.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Medical_03.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Medical_03.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Nuclear_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Nuclear_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_02.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_02.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_03.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_03.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_04.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_04.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_05.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_05.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_06.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_06.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_07.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_07.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_08.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_08.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_09.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Number_09.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Planet_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Planet_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Plant_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Plant_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Rocket_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Rocket_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Science_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Science_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Shield_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Shield_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Ship_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Ship_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Toxic_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Toxic_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Warning_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Warning_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Water_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Water_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_AirLock_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_AirLock_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_Bridge_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_Bridge_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_CrewQuarters_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_CrewQuarters_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_EngineRoom_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_EngineRoom_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_EscpapePod_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_EscpapePod_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_Exit_02.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_Exit_02.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_Hangar_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_Hangar_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_Hydroponics_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_Hydroponics_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_Hydroponics_02.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_Hydroponics_02.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_Kitchen_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_Kitchen_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_LoadingBay_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_LoadingBay_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_LockerRoom_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_LockerRoom_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_MedicalBay_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_MedicalBay_01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_ScienceLab_01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TempAssets/PolygonSciFiSpace/Prefabs/Signs/SM_Sign_ScienceLab_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FurkanScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FurkanScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Managers/ZombieManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Managers/ZombieManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +22,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.10/Editor/MaterialUpgrader.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -184,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714171862060</updated>
       <workItem from="1714171866064" duration="563000" />
-      <workItem from="1714175978344" duration="841000" />
+      <workItem from="1714175978344" duration="4267000" />
     </task>
     <servers />
   </component>
