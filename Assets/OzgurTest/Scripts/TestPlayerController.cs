@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace OzgurTest.Scripts
 {
-    public class PlayerController : MonoBehaviour
+    public class TestPlayerController : MonoBehaviour
     {
         public float speed = 5f;
 
