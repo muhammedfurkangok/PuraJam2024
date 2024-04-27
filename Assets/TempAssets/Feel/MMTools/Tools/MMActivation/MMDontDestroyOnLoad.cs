@@ -10,7 +10,7 @@ namespace MoreMountains.Tools
 		/// <summary>
 		/// On Awake we make sure our object will not destroy on the next scene load
 		/// </summary>
-		protected void Awake()
+		protected void Start()
 		{
 			DontDestroyOnLoad(this.gameObject);
 		}
