@@ -11,11 +11,7 @@ namespace OzgurTest.Scripts
         {
             base.OnStartClient();
 
-            if (!NetworkServer.activeHost)
-            {
-                SceneLog.Instance.Log("Disabling TestPlayerController.");
-                enabled = false;
-            }
+            if (!NetworkServer.activeHost) enabled = false;
         }
 
         void Update()
