@@ -1,10 +1,22 @@
+using Mirror;
 using UnityEngine;
 
 namespace OzgurTest.Scripts
 {
-    public class TestPlayerController : MonoBehaviour
+    public class TestPlayerController : NetworkBehaviour
     {
         public float speed = 5f;
+
+        public override void OnStartClient()
+        {
+            base.OnStartClient();
+
+            if (!NetworkServer.activeHost)
+            {
+                SceneLog.Instance.Log("Disabling TestPlayerController.");
+                enabled = false;
+            }
+        }
 
         void Update()
         {
