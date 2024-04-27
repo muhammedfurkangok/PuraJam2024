@@ -54,7 +54,7 @@ MonoBehaviour:
   sendRate: 60
   autoStartServerBuild: 0
   autoConnectClientBuild: 0
-  offlineScene: Assets/OzgurTest/DisconnectScene.unity
+  offlineScene: Assets/Scenes/DisconnectScene.unity
   onlineScene: Assets/OzgurTest/GameScene.unity
   transport: {fileID: 5773571887211221376}
   networkAddress: localhost
