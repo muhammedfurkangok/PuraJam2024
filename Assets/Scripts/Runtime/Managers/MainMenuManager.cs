@@ -29,8 +29,9 @@ namespace Runtime.Managers
 
         private void Start()
         {
-            startButton.onClick.AddListener(StartButton);
-            startBackButton.onClick.AddListener(StartBackButton);
+            if (startButton != null) startButton.onClick.AddListener(StartButton);
+            if (startBackButton != null) startBackButton.onClick.AddListener(StartBackButton);
+
             optionsButton.onClick.AddListener(OptionsButton);
             optionsBackButton.onClick.AddListener(OptionsBackButton);
             quitButton.onClick.AddListener(QuitButton);

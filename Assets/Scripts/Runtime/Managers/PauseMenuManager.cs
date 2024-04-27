@@ -1,0 +1,45 @@
+using UnityEngine;
+
+namespace Runtime.Managers
+{
+    public class PauseMenuManager : MonoBehaviour
+    {
+        [Header("References")] [SerializeField] private Canvas canvas;
+
+        private bool isGamePaused;
+
+        private void Start()
+        {
+            //Default settings
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (isGamePaused) OnContinueButton();
+                else PauseGame();
+            }
+        }
+
+        private void OnContinueButton()
+        {
+            isGamePaused = false;
+            canvas.enabled = false;
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        private void PauseGame()
+        {
+            isGamePaused = true;
+            canvas.enabled = true;
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+}
