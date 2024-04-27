@@ -5,7 +5,7 @@ using UnityEngine.AI;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-public class EnemyManager : MonoBehaviour
+public class ZombieManager : MonoBehaviour
 {
     #region Self Variables
 
