@@ -1,7 +1,6 @@
-using System;
 using Mirror;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 namespace Runtime.Managers
@@ -21,6 +20,13 @@ namespace Runtime.Managers
         [SerializeField] private GameObject mainMenuUI;
         [SerializeField] private GameObject optionsUI;
 
+        [Header("Sliders")]
+        [SerializeField] private Slider SFXSlider;
+        [SerializeField] private Slider musicSlider;
+        [SerializeField] private Slider sensitivitySlider;
+
+        [Header("Audio Mixer")] [SerializeField] private AudioMixer audioMixer;
+
         private void Start()
         {
             startButton.onClick.AddListener(StartButton);
@@ -28,6 +34,30 @@ namespace Runtime.Managers
             optionsButton.onClick.AddListener(OptionsButton);
             optionsBackButton.onClick.AddListener(OptionsBackButton);
             quitButton.onClick.AddListener(QuitButton);
+
+            //Init player prefs
+            if (!PlayerPrefs.HasKey("SFX")) PlayerPrefs.SetFloat("SFX", 1);
+            if (!PlayerPrefs.HasKey("Music")) PlayerPrefs.SetFloat("Music", 1);
+            if (!PlayerPrefs.HasKey("Sensitivity")) PlayerPrefs.SetFloat("Sensitivity", 1);
+
+            SFXSlider.value = PlayerPrefs.GetFloat("SFX");
+            musicSlider.value = PlayerPrefs.GetFloat("Music");
+            sensitivitySlider.value = PlayerPrefs.GetFloat("Sensitivity");
+
+            SFXSlider.onValueChanged.AddListener(value =>
+            {
+                PlayerPrefs.SetFloat("SFX", value);
+                audioMixer.SetFloat("SFX", Mathf.Log10(value) * 20);
+
+            });
+
+            musicSlider.onValueChanged.AddListener(value =>
+            {
+                PlayerPrefs.SetFloat("Music", value);
+                audioMixer.SetFloat("Music", Mathf.Log10(value) * 20);
+            });
+
+            sensitivitySlider.onValueChanged.AddListener((value) => PlayerPrefs.SetFloat("Sensitivity", value));
         }
 
         private void StartButton()
