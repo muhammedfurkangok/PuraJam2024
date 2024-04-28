@@ -18,8 +18,8 @@ public class ZombieManager : MonoBehaviour
     public Transform player;
     public LayerMask whatIsPlayer;
 
-    public float sightRange, attackRange, alertedSightRange,alertedAttackRange;
-    public bool playerInSightRange, playerInAttackRange,playerInAttackRangeAlerted,playerInSightRangeAlerted,isAlerted;
+    public float sightRange, attackRange, alertedSightRange, alertedAttackRange;
+    public bool playerInSightRange, playerInAttackRange, playerInAttackRangeAlerted, playerInSightRangeAlerted, isAlerted;
 
     #endregion
 
@@ -32,7 +32,7 @@ public class ZombieManager : MonoBehaviour
 
     #region Constants
     string currentAnimation;
-    const string  idle1 = "idle1";
+    const string idle1 = "idle1";
     const string idle2 = "idle2";
     const string walk1 = "walk1";
     const string run1 = "run1";
@@ -81,19 +81,29 @@ public class ZombieManager : MonoBehaviour
         playerInAttackRangeAlerted = Physics.CheckSphere(transform.position, alertedAttackRange, whatIsPlayer);
         playerInSightRangeAlerted = Physics.CheckSphere(transform.position, alertedSightRange, whatIsPlayer);
         
-             if (!playerInSightRange && !playerInAttackRange && !isAlerted) Patroling();
-             if (playerInSightRange && !playerInAttackRange && !isAlerted) ChasePlayer();
-             if (playerInSightRange && playerInAttackRange && !isAlerted) AttackPlayer();
-             
-             if (isAlerted && !playerInSightRange) GoToAlertPlace();
-             if (playerInSightRangeAlerted && isAlerted) ChasePlayer();
-             if(playerInAttackRangeAlerted && isAlerted) AttackPlayer();
+        if (!isAlerted)
+        {
+            if (!playerInSightRange && !playerInAttackRange) 
+                Patroling();
+            else if (playerInSightRange && !playerInAttackRange) 
+                ChasePlayer();
+            else if (playerInSightRange && playerInAttackRange) 
+                AttackPlayer();
+        }
+        else // If alerted
+        {
+            if (!playerInSightRange) 
+                GoToAlertPlace();
+            else if (playerInSightRangeAlerted) 
+                ChasePlayer();
+            else if (playerInAttackRangeAlerted) 
+                AttackPlayer();
+        }
     }
 
     [Button]
     private void GoToAlertPlace()
     {
-        
         ChangeAnimation(walk1);
         enemyNavMeshAgent.SetDestination(alertPlace.transform.position);
     }
@@ -101,9 +111,6 @@ public class ZombieManager : MonoBehaviour
 
     private async void AttackPlayer()
     {
-        isPatrolingStarted = false;
-        isPatrolingFinished = false;
-        isChasing = false;
         if(isAttacking) return;
         
         isAttacking = true;
@@ -121,10 +128,6 @@ public class ZombieManager : MonoBehaviour
 
     private void ChasePlayer()
     {
-        isPatrolingStarted = false;
-        isPatrolingFinished = false;
-        isAttacking = false;
-        
         if(isChasing) return;
         
         isChasing = true;
@@ -137,19 +140,13 @@ public class ZombieManager : MonoBehaviour
 
     private async void Patroling()
     {
-        isAttacking = false;
-        isChasing = false;
         if(isPatrolingStarted) return;
         
-        if (!isPatrolingStarted)
-        {
-            nextPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
-            isPatrolingStarted = true;
-            isPatrolingFinished = false;
-        }
+        nextPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+        isPatrolingStarted = true;
+        isPatrolingFinished = false;
         
         enemyNavMeshAgent.SetDestination(nextPosition);
-
         ChangeAnimation(walk1);
 
         await UniTask.WaitUntil(() => enemyNavMeshAgent.remainingDistance <= 0.1f);
@@ -180,9 +177,7 @@ public class ZombieManager : MonoBehaviour
     }
     private void ChangeAnimation(string animation)
     {
-      
         if(currentAnimation == animation) return;
-        
         
         enemyAnimator.Play(animation);
         currentAnimation = animation;
