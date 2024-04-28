@@ -44,7 +44,7 @@ namespace Runtime.Controllers
 
             var mouseY = Input.GetAxis("Mouse Y") * PlayerPrefs.GetFloat("Sensitivity") * Time.deltaTime;
 
-            rotationX += mouseY;
+            rotationX -= mouseY;
             rotationX = Mathf.Clamp(rotationX, minX, maxX);
 
             euler = transform.eulerAngles;
