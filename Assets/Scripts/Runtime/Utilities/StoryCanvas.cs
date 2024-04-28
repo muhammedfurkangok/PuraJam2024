@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Mirror;
 using UnityEngine;
 
 public class StoryCanvas : MonoBehaviour
@@ -50,7 +51,9 @@ public class StoryCanvas : MonoBehaviour
         await UniTask.WaitForSeconds(fadeDuration);
         FadeOut(_imageCanvasGroup);
     }
-    async void GameEnd()
+
+    [ClientRpc]
+    private async void GameEnd()
     {
         FadeIn(_ENDImageCanvasGroup); // goes black
         await UniTask.WaitForSeconds(fadeDuration);

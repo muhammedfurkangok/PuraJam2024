@@ -17,7 +17,7 @@ public class dtwen : MonoBehaviour
 
     public void SwapCams()
     {
-        vcam1.Priority = 101;
+        vcam1.Priority = 10000;
     }
     public void PlayCutscene()
     {
