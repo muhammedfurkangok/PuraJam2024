@@ -3,33 +3,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameWinCondition : Interactable
+public class GameWinCondition : MonoBehaviour
 {
     // put this class onto enterexit door
-    public static GameWinCondition instance;
+    //public static GameWinCondition instance;
 
-    public bool canWin { get; private set; } = false;
+    //public bool canWin { get; private set; } = false;
 
-    private void Awake()
+    //private void Awake()
+    //{
+    //    instance = this;
+    //    RestartEngine.OnEngineRestarted += RestartEngine_OnEngineRestarted;
+    //}
+
+    //private void RestartEngine_OnEngineRestarted()
+    //{
+    //    canWin = true;
+    //}
+
+    //override protected void Interact()
+    //{
+    //    if (canWin)
+    //    {
+    //        OnGameWin?.Invoke();
+    //    }
+    //}
+
+    public static event Action OnGameWin;
+
+    private void OnTriggerEnter(Collider other)
     {
-        instance = this;
-        RestartEngine.OnEngineRestarted += RestartEngine_OnEngineRestarted;
-    }
-
-    private void RestartEngine_OnEngineRestarted()
-    {
-        canWin = true;
-    }
-
-    override protected void Interact()
-    {
-        if (canWin)
+        if (other.CompareTag("Player"))
         {
             OnGameWin?.Invoke();
         }
     }
-
-    public static event Action OnGameWin;
 
 
 }
