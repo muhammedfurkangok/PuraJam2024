@@ -108,10 +108,10 @@ namespace Runtime.Controllers
             //arms.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
             // Camera.localRotation = Quaternion.Euler(_xRotation, 0 , 0);
 
-            _xRotation -= mouseY * PlayerPrefs.GetFloat("Sensitivity") * Time.smoothDeltaTime;
+            _xRotation -= mouseY * PlayerPrefs.GetFloat("Sensitivity") / 3;
             _xRotation = Mathf.Clamp(_xRotation, UpperLimit, BottomLimit);
 
-            //eyes.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
+            eyes.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
             //playerRigidbody.MoveRotation(playerRigidbody.rotation * Quaternion.Euler(0, Mouse_X * PlayerPrefs.GetFloat("Sensitivity") * Time.smoothDeltaTime, 0));
             transform.Rotate(Vector3.up * (mouseX * PlayerPrefs.GetFloat("Sensitivity") / 3));
         }
