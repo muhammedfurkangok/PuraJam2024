@@ -20,7 +20,7 @@ MonoBehaviour:
     Source: 0
     NormalSamples: 1
     Intensity: 2
-    DirectLightingStrength: 0.37
+    DirectLightingStrength: 1
     Radius: 0.5
     Samples: 0
     BlurQuality: 0
@@ -84,13 +84,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_DefaultStencilState:
-    overrideStencilState: 0
+    overrideStencilState: 1
     stencilReference: 0
     stencilCompareFunction: 8
     passOperation: 2
     failOperation: 0
     zFailOperation: 0
-  m_ShadowTransparentReceive: 1
+  m_ShadowTransparentReceive: 0
   m_RenderingMode: 0
   m_DepthPrimingMode: 0
   m_CopyDepthMode: 0
