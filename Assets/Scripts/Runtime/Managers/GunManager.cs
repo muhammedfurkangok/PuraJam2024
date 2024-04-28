@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Runtime.Managers;
 using UnityEngine;
 
 public class GunManager : MonoBehaviour
 {
-   
     public float damage = 10f;
     public float range = 100f;
     public float impactForce = 30f;
@@ -14,17 +14,16 @@ public class GunManager : MonoBehaviour
     
     [SerializeField] private CinemachineVirtualCamera cam;
     [SerializeField] private ParticleSystem muzzleFlash;
- 
 
-   
-    void Update()
+    private void Update()
     {
+        if (PauseMenuManager.Instance.isGamePaused) return;
+
         if(Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
-          {
-              nextTimeToFire = Time.time + 1f / fireRate;
-              Shot();
-          }
-        
+        {
+            nextTimeToFire = Time.time + 1f / fireRate;
+            Shot();
+        }
     }
 
     private void Shot()

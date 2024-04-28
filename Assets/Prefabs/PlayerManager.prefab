@@ -16023,8 +16023,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4356143173487920954}
-  - component: {fileID: 2667214101260761605}
-  - component: {fileID: 7561307001039955671}
   m_Layer: 0
   m_Name: Physic
   m_TagString: Untagged
@@ -16041,61 +16039,13 @@ Transform:
   m_GameObject: {fileID: 5008520192926589913}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.13600004, z: -1.06}
+  m_LocalPosition: {x: 0, y: 0.13600004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5634908920650612545}
   m_Father: {fileID: 6529473909910263148}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2667214101260761605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5008520192926589913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a42ab9ba95501d42858a4120bc1abc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Camera: {fileID: 8514953917321095812}
-  CameraRoot: {fileID: 7360811365521905310}
-  MouseSensitivity: 100
-  UpperLimit: -40
-  BottomLimit: 70
-  eyes: {fileID: 8799102973600585097}
-  arms: {fileID: 4124649185913311841}
-  AnimBlendSpeed: 5000
-  playerRigidbody: {fileID: 980457237412914883}
-  animator: {fileID: 8125695656856887795}
-  speed: 3000
-  gravity: -14.715
-  jumpHeight: 3
-  groundCheck: {fileID: 7414046400587806217}
-  groundDistance: 0.4
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
---- !u!114 &7561307001039955671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5008520192926589913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bdc6fd434a342d5b0ae7392420d79ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 1353076018827485500}
-  interactDistance: 5
-  interactLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  playerUIController: {fileID: 6494964118590139610}
 --- !u!1 &5057872141121239406
 GameObject:
   m_ObjectHideFlags: 0
@@ -17078,9 +17028,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6529473909910263148}
+  - component: {fileID: 6704397129002150771}
+  - component: {fileID: 8918491068759001734}
   - component: {fileID: 6494964118590139610}
   - component: {fileID: 980457237412914883}
   - component: {fileID: 7414039367758908028}
+  - component: {fileID: 3715879345409330879}
+  - component: {fileID: 1261132644528294291}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -17104,6 +17058,60 @@ Transform:
   - {fileID: 4356143173487920954}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6704397129002150771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553411823158875214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a42ab9ba95501d42858a4120bc1abc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  Camera: {fileID: 8514953917321095812}
+  CameraRoot: {fileID: 7360811365521905310}
+  MouseSensitivity: 100
+  UpperLimit: -40
+  BottomLimit: 70
+  eyes: {fileID: 8799102973600585097}
+  arms: {fileID: 4124649185913311841}
+  AnimBlendSpeed: 5000
+  playerRigidbody: {fileID: 980457237412914883}
+  animator: {fileID: 8125695656856887795}
+  speed: 3000
+  gravity: -14.715
+  jumpHeight: 3
+  groundCheck: {fileID: 7414046400587806217}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &8918491068759001734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553411823158875214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bdc6fd434a342d5b0ae7392420d79ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  cam: {fileID: 1353076018827485500}
+  interactDistance: 5
+  interactLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  playerUIController: {fileID: 6494964118590139610}
 --- !u!114 &6494964118590139610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17116,6 +17124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf478981e3569c47b406c8ea198cf0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   _promptText: {fileID: 0}
 --- !u!54 &980457237412914883
 Rigidbody:
@@ -17167,6 +17178,57 @@ CapsuleCollider:
   m_Height: 1.78
   m_Direction: 1
   m_Center: {x: 0, y: 0.06, z: 0}
+--- !u!114 &3715879345409330879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553411823158875214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 3116890006
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
+--- !u!114 &1261132644528294291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553411823158875214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff3ba0becae47b8b9381191598957c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 6529473909910263148}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  sendIntervalMultiplier: 1
+  timelineOffset: 0
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  onlySyncOnChangeCorrectionMultiplier: 2
+  rotationSensitivity: 0.01
+  positionPrecision: 0.01
+  scalePrecision: 0.01
 --- !u!1 &7826328909498602996
 GameObject:
   m_ObjectHideFlags: 0
