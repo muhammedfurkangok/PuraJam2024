@@ -1,5 +1,6 @@
 using Cinemachine;
 using Mirror;
+using Runtime.Managers;
 using UnityEngine;
 
 namespace Runtime.Controllers
@@ -21,6 +22,8 @@ namespace Runtime.Controllers
 
         private void Update()
         {
+            if (PauseMenuManager.Instance.isGamePaused) return;
+
             playerUIController.UpdateUI("");
             Ray ray = new Ray(cam.transform.position, cam.transform.forward);
             Debug.DrawRay(ray.origin, ray.direction * interactDistance, Color.red);
