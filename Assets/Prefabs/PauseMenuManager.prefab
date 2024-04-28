@@ -103,6 +103,18 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5239851696428063662}
+    - targetCorrespondingSourceObject: {fileID: 7507200459351258403, guid: 6a724d02b771df64f9e484335b19edba,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8853816660859896491}
+    - targetCorrespondingSourceObject: {fileID: 7507200459351258403, guid: 6a724d02b771df64f9e484335b19edba,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2261143310067441002}
+    - targetCorrespondingSourceObject: {fileID: 7507200459351258403, guid: 6a724d02b771df64f9e484335b19edba,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8695947418137718468}
   m_SourcePrefab: {fileID: 100100000, guid: 6a724d02b771df64f9e484335b19edba, type: 3}
 --- !u!1 &3720197776422792276 stripped
 GameObject:
@@ -124,6 +136,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 5361234417373837833}
   isGamePaused: 0
+--- !u!114 &8853816660859896491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720197776422792276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c755a7147fc9c84dbf0e13e56d01d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2261143310067441002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720197776422792276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa5c8a29eec7477cb4f09784417bba2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  playerCamera: {fileID: 0}
+  cameras:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  activeCamera: {fileID: 0}
+  index: 0
+--- !u!114 &8695947418137718468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720197776422792276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 3105971874
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!223 &5361234417373837833 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 1290507157477614462, guid: 6a724d02b771df64f9e484335b19edba,

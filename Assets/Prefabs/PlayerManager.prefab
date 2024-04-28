@@ -15686,6 +15686,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868a687847218c942a758ad3289e53ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   damage: 19
   range: 100
   impactForce: 30
@@ -17099,7 +17102,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7553411823158875214}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bdc6fd434a342d5b0ae7392420d79ec, type: 3}
   m_Name: 
@@ -17518,6 +17521,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868a687847218c942a758ad3289e53ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   damage: 40
   range: 200
   impactForce: 30

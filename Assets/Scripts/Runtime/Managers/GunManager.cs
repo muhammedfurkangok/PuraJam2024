@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Cysharp.Threading.Tasks;
+using Mirror;
 using Runtime.Managers;
 using UnityEngine;
 
-public class GunManager : MonoBehaviour
+public class GunManager : NetworkBehaviour
 {
     public float damage = 10f;
     public float range = 100f;
@@ -19,8 +21,12 @@ public class GunManager : MonoBehaviour
     [SerializeField] private GameObject bullet;
     //todo[SerializeField] private AudioSource gunShotSound;
     
-    
- 
+    public override void OnStartClient()
+    {
+        base.OnStartClient();
+
+        if (!NetworkServer.activeHost) enabled = false;
+    }
 
     private void Update()
     {
@@ -33,7 +39,7 @@ public class GunManager : MonoBehaviour
         }
     }
 
-    private void Shot()
+    private async void Shot()
     {
         muzzleFlash.Play();
         
@@ -54,10 +60,13 @@ public class GunManager : MonoBehaviour
                hit.rigidbody.AddForce(-hit.normal * impactForce);
            }
         }
+
         GameObject bulletGO = Instantiate(bullet, cam.transform.position, cam.transform.rotation);
         bulletGO.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 1000f);
-        Destroy(bulletGO, 2f);
-        
-      
+        NetworkServer.Spawn(bulletGO);
+
+        await UniTask.WaitForSeconds(2f);//
+        Destroy(bulletGO);
+        NetworkServer.Destroy(bulletGO);
     }
 }
