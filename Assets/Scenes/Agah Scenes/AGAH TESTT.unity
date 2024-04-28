@@ -499,6 +499,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d15dbf3b38cadc428db007806b10f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   promptMessage: Take Key Card
   keyCard: {fileID: 1626226928}
 --- !u!1 &1945135159
@@ -589,7 +592,7 @@ Transform:
   m_GameObject: {fileID: 1945135159}
   serializedVersion: 2
   m_LocalRotation: {x: -0.11107712, y: 0.3603694, z: -0.027035747, w: -0.925778}
-  m_LocalPosition: {x: 884.79346, y: 88.987946, z: 2494.047}
+  m_LocalPosition: {x: 144.79346, y: 88.987946, z: -145.95288}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -910,6 +913,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187398286102390644, guid: 0cd124889c69b71409d3173fcdc5ce09,
+        type: 3}
+      propertyPath: sceneId
+      value: 1310466668
       objectReference: {fileID: 0}
     - target: {fileID: 7353802505930487445, guid: 0cd124889c69b71409d3173fcdc5ce09,
         type: 3}

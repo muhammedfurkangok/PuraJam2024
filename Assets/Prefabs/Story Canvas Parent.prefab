@@ -58,7 +58,7 @@ MonoBehaviour:
   _ENDImageCanvasGroup: {fileID: 5748887416078310462}
   endCameraSwapWaitTime: 8
   endCutsceneWaitTime: 10
-  endCutscene: {fileID: 1392544706626499276}
+  endCutscene: {fileID: 0}
 --- !u!114 &6187398286102390644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -777,6 +777,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3012371805174625120, guid: bcd3b63ac0153f74a8006b56676b5c97,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6714469653089431550, guid: bcd3b63ac0153f74a8006b56676b5c97,
         type: 3}
       propertyPath: m_Name
@@ -787,18 +792,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcd3b63ac0153f74a8006b56676b5c97, type: 3}
---- !u!114 &1392544706626499276 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4689417403741589399, guid: bcd3b63ac0153f74a8006b56676b5c97,
-    type: 3}
-  m_PrefabInstance: {fileID: 5928839651365223771}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3642e2f73a4097540a3a1e360cec8cd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &5196553517526968513 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1899012318316959130, guid: bcd3b63ac0153f74a8006b56676b5c97,
