@@ -7,6 +7,7 @@ namespace Runtime.Managers
     public class CameraManager : NetworkBehaviour
     {
         [Header("References")]
+        [SerializeField] private Canvas crosshair;
         [SerializeField] private CinemachineVirtualCamera playerCamera;
         [SerializeField] private CinemachineVirtualCamera[] cameras;
 
@@ -20,19 +21,20 @@ namespace Runtime.Managers
             if (Instance == null) Instance = this;
             else Destroy(gameObject);
         }
-        
-        private void Start()
-        {
-            for (var i = 0; i < cameras.Length; i++) cameras[i].Priority = i == 0 ? 1 : 0;
-
-            activeCamera = cameras[index];
-        }
 
         public override void OnStartClient()
         {
             base.OnStartClient();
 
-            if (NetworkServer.activeHost) enabled = false;
+            for (var i = 0; i < cameras.Length; i++) cameras[i].Priority = i == 0 ? 1 : 0;
+            activeCamera = cameras[index];
+
+            if (NetworkServer.activeHost)
+            {
+                enabled = false;
+                crosshair.enabled = false;
+            }
+
             else playerCamera.Priority = 0;
         }
 

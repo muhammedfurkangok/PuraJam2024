@@ -8,9 +8,9 @@ public class EnemyManager : MonoBehaviour
     public float health = 100f;
     public float damage = 10f;
     [SerializeField] private Animator enemyAnimator;
+    [SerializeField] private ZombieManager zombieManager;
     
-    const string die1 = "death1";
-    const string die2 = "death2";
+    const string death = "death";
     public void TakeDamage(float damage)
     {
         health -= damage;
@@ -18,6 +18,8 @@ public class EnemyManager : MonoBehaviour
         if(health <= 0)
         {
             Die();
+            zombieManager.enabled = false;
+            this.enabled = false;
         }
        
     }
@@ -25,8 +27,7 @@ public class EnemyManager : MonoBehaviour
     [Button]
     public void Die()
     {
-        string currentAnimation = Random.Range(0, 2) == 0 ? die1 : die2;
-        enemyAnimator.Play(currentAnimation);
+        enemyAnimator.Play(death);
         Destroy(gameObject,3f);
     }
 }

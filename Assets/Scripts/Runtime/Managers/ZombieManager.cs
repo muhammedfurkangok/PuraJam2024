@@ -1,66 +1,45 @@
-using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using Sirenix.OdinInspector;
-using Unity.VisualScripting;
+using Runtime.Controllers;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
+
 using Random = UnityEngine.Random;
 
 public class ZombieManager : MonoBehaviour
 {
-    #region Self Variables
-
-    #region Public Variables
-
     public NavMeshAgent enemyNavMeshAgent;
-    public Transform player;
     public LayerMask whatIsPlayer;
 
     public float sightRange, attackRange, alertedSightRange, alertedAttackRange;
     public bool playerInSightRange, playerInAttackRange, playerInAttackRangeAlerted, playerInSightRangeAlerted, isAlerted;
-
-    #endregion
-
-    #region Serialized Variables
     
     [SerializeField] public Animator enemyAnimator;
     [SerializeField] private GameObject alertPlace;
+    [SerializeField] private PlayerMovementController playerController;
 
-    #endregion
-
-    #region Constants
     string currentAnimation;
-    const string idle1 = "idle1";
-    const string idle2 = "idle2";
-    const string walk1 = "walk1";
-    const string run1 = "run1";
-    const string run2 = "run2";
-    const string attack1 = "attack1";
-    const string attack2 = "attack2";
-    const string die1 = "die1";
-    const string die2 = "die2";
+    const string idle = "idle";
+    const string walk = "walk";
+    const string run = "run";
+    const string attack = "attack";
+    const string die = "die";
+ 
       
     private bool isPatrolingStarted;
     private bool isPatrolingFinished;
     private bool isChasing;
     private bool isAttacking;
-
-    #endregion
-    #region Private Variables
     
     private Vector3 nextPosition;
-    
-    #endregion
 
-    #endregion
+    public Transform player;
+    private Tween lookAtPlayerTween;
     
     private void Start()
     {
-        enemyAnimator.Play(walk1);
+        enemyAnimator.Play(idle);
         ZombieSignals.Instance.OnZombiesAlerted += Alerted;
-       
     }
 
     private void Alerted()
@@ -70,84 +49,60 @@ public class ZombieManager : MonoBehaviour
     private void OnDisable()
     {
         ZombieSignals.Instance.OnZombiesAlerted -= Alerted;
-        
+
     }
 
     private void Update()
-    { 
-       
+    {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        playerInAttackRangeAlerted = Physics.CheckSphere(transform.position, alertedAttackRange, whatIsPlayer);
-        playerInSightRangeAlerted = Physics.CheckSphere(transform.position, alertedSightRange, whatIsPlayer);
         
-        if (!isAlerted)
-        {
             if (!playerInSightRange && !playerInAttackRange) 
                 Patroling();
             else if (playerInSightRange && !playerInAttackRange) 
                 ChasePlayer();
             else if (playerInSightRange && playerInAttackRange) 
                 AttackPlayer();
-        }
-        else // If alerted
-        {
-            if (!playerInSightRange) 
-                GoToAlertPlace();
-            else if (playerInSightRangeAlerted) 
-                ChasePlayer();
-            else if (playerInAttackRangeAlerted) 
-                AttackPlayer();
-        }
+        
+       
     }
 
-    [Button]
-    private void GoToAlertPlace()
-    {
-        ChangeAnimation(walk1);
-        enemyNavMeshAgent.SetDestination(alertPlace.transform.position);
-    }
-
+    
 
     private async void AttackPlayer()
     {
         if(isAttacking) return;
+        playerController.TakeDamage(20);
+
+        enemyNavMeshAgent.SetDestination(transform.position);
+        TurnToPlayer();
         
         isAttacking = true;
-        
-        string attackAnimation = Random.Range(0, 2) == 0 ? attack1 : attack2;
         transform.LookAt(player);
-        
-        ChangeAnimation(attackAnimation);
+        ChangeAnimation(attack);
         //wait until animation end
-        await UniTask.WaitForSeconds(attackAnimation == attack1 ? 2.63f : 4.17f);
+        await UniTask.WaitForSeconds(02.63f);
         isAttacking = false;
     }
-    
-
 
     private void ChasePlayer()
     {
         if(isChasing) return;
-        
         isChasing = true;
-        string runAnimation = Random.Range(0, 2) == 0 ? run1 : run2;
-        ChangeAnimation(runAnimation);
-        
+        ChangeAnimation(run);
         enemyNavMeshAgent.SetDestination(player.position);
-     
     }
 
     private async void Patroling()
     {
         if(isPatrolingStarted) return;
         
-        nextPosition = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+        nextPosition =  transform.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
         isPatrolingStarted = true;
         isPatrolingFinished = false;
         
         enemyNavMeshAgent.SetDestination(nextPosition);
-        ChangeAnimation(walk1);
+        ChangeAnimation(walk);
 
         await UniTask.WaitUntil(() => enemyNavMeshAgent.remainingDistance <= 0.1f);
         
@@ -155,13 +110,18 @@ public class ZombieManager : MonoBehaviour
 
         if (isPatrolingFinished)
         {
-            string idleAnimation = Random.Range(0, 2) == 0 ? idle1 : idle2;
-            ChangeAnimation(idleAnimation);
+          
+            ChangeAnimation(idle);
             await UniTask.WaitForSeconds(5);
             isPatrolingStarted = false;
             isPatrolingFinished = false;
         }
+    }
 
+    private void TurnToPlayer()
+    {
+        lookAtPlayerTween?.Kill();
+        lookAtPlayerTween = transform.DOLookAt(player.position, 0.2f);
     }
 
     private void OnDrawGizmosSelected()
@@ -175,6 +135,7 @@ public class ZombieManager : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, alertedSightRange);
     }
+
     private void ChangeAnimation(string animation)
     {
         if(currentAnimation == animation) return;

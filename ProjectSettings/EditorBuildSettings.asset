@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Agah Scenes/AgahScene.unity
     guid: e174b83f1dfef1844ae9bf04fd9910c5
+  - enabled: 0
+    path: Assets/Scenes/SA.unity
+    guid: fdf47331ece41cc47807b0a4ce535c14
   m_configObjects: {}

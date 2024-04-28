@@ -1,49 +1,19 @@
-using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Mirror;
 
-public class DoorOpen : MonoBehaviour
+namespace Runtime.Utilities
 {
-    [SerializeField] Transform door;
-    [SerializeField] bool easyUnlock;
-    DoorInteractable doorInteractable;
-
-
-    public event Action OnDoorOpened;
-    public event Action OnDoorFail;
-
-#if UNITY_EDITOR
-    async void Start()
+    public class DoorOpen : NetworkBehaviour
     {
-        await UniTask.WaitForSeconds(4f);
-        OpenDoor();
-    }
-
-#endif
-
-    public void InitializeDoor(DoorInteractable doorInteractable)
-    {
-        this.doorInteractable = doorInteractable;
-    }
-
-    public void TryOpenDoor()
-    {
-        if(doorInteractable.isDeviceInstalled || easyUnlock)
+        public void OpenDoor()
         {
-            OpenDoor();
-            OnDoorOpened?.Invoke();
+            OpenDoorCommand();
         }
-        else
-        {
-            OnDoorFail?.Invoke();
-        }
-    }
 
-    void OpenDoor()
-    {
-       door.DOMoveY(door.position.y + 3f, 3f);
+        [Command(requiresAuthority = false)]
+        private void OpenDoorCommand()
+        {
+            transform.DOMoveY(transform.position.y + 3f, 3f);
+        }
     }
 }

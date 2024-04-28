@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2260470026575246388}
   - component: {fileID: 4769741000484906978}
   - component: {fileID: 6764131917447370623}
+  - component: {fileID: 412764982621590915}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -127,6 +128,7 @@ MonoBehaviour:
   health: 100
   damage: 10
   enemyAnimator: {fileID: 2162893859460811479}
+  zombieManager: {fileID: 6764131917447370623}
 --- !u!114 &6764131917447370623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyNavMeshAgent: {fileID: 2260470026575246388}
-  player: {fileID: 0}
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
@@ -155,6 +156,29 @@ MonoBehaviour:
   isAlerted: 0
   enemyAnimator: {fileID: 2162893859460811479}
   alertPlace: {fileID: 0}
+  playerController: {fileID: 0}
+  player: {fileID: 0}
+--- !u!65 &412764982621590915
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494265297179884108}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &614024929730369467
 GameObject:
   m_ObjectHideFlags: 0

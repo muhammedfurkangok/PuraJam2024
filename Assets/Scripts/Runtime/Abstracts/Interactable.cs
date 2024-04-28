@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Mirror;
 
-public abstract class Interactable : MonoBehaviour
+namespace Runtime.Abstracts
 {
-    //player objeye baktiginda cikacak mesaj
-    public string promptMessage;
-
-    //bu fonksiyon cagirilacak
-    public void BaseInteract()
+    public abstract class Interactable : NetworkBehaviour
     {
-        Interact();
-    }
+        //player objeye baktiginda cikacak mesaj
+        public string promptMessage;
 
-    protected virtual void Interact()
-    {
-        //template
+        //bu fonksiyon cagirilacak
+        public void BaseInteract()
+        {
+            Interact();
+        }
+
+        protected virtual void Interact()
+        {
+            //template
+        }
     }
 }

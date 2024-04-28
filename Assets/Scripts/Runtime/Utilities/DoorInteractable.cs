@@ -1,26 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
-using System;
-using UnityEngine;
+﻿using Runtime.Abstracts;
 
-public class DoorInteractable : Interactable
+namespace Runtime.Utilities
 {
-    DoorOpen doorOpen;
-
-    public event Action OnInteracted;
-    public bool isDeviceInstalled { get; private set; } = false;    
-
-    [SerializeField] float interactDuration = 3f;
-
-    private void Start()
+    public class DoorInteractable : Interactable
     {
-        doorOpen = GetComponent<DoorOpen>();
-        doorOpen.InitializeDoor(this);
-    }
-    protected async override void Interact()
-    {
-        //base.Interact();
-        OnInteracted?.Invoke();
-        await UniTask.WaitForSeconds(interactDuration);
-        isDeviceInstalled = true;
+
     }
 }
