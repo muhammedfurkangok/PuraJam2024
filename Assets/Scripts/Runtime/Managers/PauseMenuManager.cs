@@ -25,12 +25,12 @@ namespace Runtime.Managers
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (isGamePaused) OnContinueButton();
+                if (isGamePaused) ContinueGame();
                 else PauseGame();
             }
         }
 
-        private void OnContinueButton()
+        private void ContinueGame()
         {
             isGamePaused = false;
             canvas.enabled = false;

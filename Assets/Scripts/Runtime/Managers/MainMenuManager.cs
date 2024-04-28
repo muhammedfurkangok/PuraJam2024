@@ -13,12 +13,15 @@ namespace Runtime.Managers
         [SerializeField] private Button optionsButton;
         [SerializeField] private Button optionsBackButton;
         [SerializeField] private Button quitButton;
+        [SerializeField] private Button creditsButton;
+        [SerializeField] private Button creditsBackButton;
 
         [Header("UI Elements")]
         [SerializeField] private NetworkManagerHUD connectionUI;
         [SerializeField] private GameObject startUI;
         [SerializeField] private GameObject mainMenuUI;
         [SerializeField] private GameObject optionsUI;
+        [SerializeField] private GameObject creditsUI;
 
         [Header("Sliders")]
         [SerializeField] private Slider SFXSlider;
@@ -35,6 +38,8 @@ namespace Runtime.Managers
             optionsButton.onClick.AddListener(OptionsButton);
             optionsBackButton.onClick.AddListener(OptionsBackButton);
             quitButton.onClick.AddListener(QuitButton);
+            creditsButton.onClick.AddListener(CreditsButton);
+            creditsBackButton.onClick.AddListener(CreditsBackButton);
 
             //Init player prefs
             if (!PlayerPrefs.HasKey("SFX")) PlayerPrefs.SetFloat("SFX", 1);
@@ -85,6 +90,18 @@ namespace Runtime.Managers
         {
             mainMenuUI.SetActive(true);
             optionsUI.SetActive(false);
+        }
+
+        private void CreditsButton()
+        {
+            mainMenuUI.SetActive(false);
+            creditsUI.SetActive(true);
+        }
+
+        private void CreditsBackButton()
+        {
+            mainMenuUI.SetActive(true);
+            creditsUI.SetActive(false);
         }
 
         private void QuitButton()

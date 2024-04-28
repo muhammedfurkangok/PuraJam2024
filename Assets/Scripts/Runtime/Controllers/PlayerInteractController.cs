@@ -1,10 +1,11 @@
-using System;
 using Cinemachine;
+using Mirror;
+using Runtime.Managers;
 using UnityEngine;
 
 namespace Runtime.Controllers
 {
-    public class PlayerInteractController : MonoBehaviour
+    public class PlayerInteractController : NetworkBehaviour
     {
         [SerializeField] private CinemachineVirtualCamera cam;
         [SerializeField] private float interactDistance = 5f;
@@ -12,8 +13,17 @@ namespace Runtime.Controllers
         
         [SerializeField] private PlayerUIController playerUIController;
 
+        public override void OnStartClient()
+        {
+            base.OnStartClient();
+
+            if (!NetworkServer.activeHost) enabled = false;
+        }
+
         private void Update()
         {
+            if (PauseMenuManager.Instance.isGamePaused) return;
+
             playerUIController.UpdateUI("");
             Ray ray = new Ray(cam.transform.position, cam.transform.forward);
             Debug.DrawRay(ray.origin, ray.direction * interactDistance, Color.red);
