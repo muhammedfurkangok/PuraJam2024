@@ -14,6 +14,12 @@ public class GunManager : MonoBehaviour
     
     [SerializeField] private CinemachineVirtualCamera cam;
     [SerializeField] private ParticleSystem muzzleFlash;
+    [SerializeField] private GameObject impactEffect;
+
+    [SerializeField] private GameObject bullet;
+    //todo[SerializeField] private AudioSource gunShotSound;
+    
+    
  
 
    
@@ -45,9 +51,12 @@ public class GunManager : MonoBehaviour
                hit.rigidbody.AddForce(-hit.normal * impactForce);
            }
         }
-
-       // Gameobject GO =Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-       //Destroy(GO, 2f);
+        GameObject bulletGO = Instantiate(bullet, cam.transform.position, cam.transform.rotation);
+        bulletGO.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 1000f);
+        Destroy(bulletGO, 2f);
+        
+        GameObject GO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(GO, 2f);
 
     }
 }

@@ -198,7 +198,7 @@ Material:
     - _Second_Color: {r: 0.44852942, g: 0.24337043, b: 0.08574827, a: 0}
     - _Size: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &6587769660050018271
+--- !u!114 &998837160283616173
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
