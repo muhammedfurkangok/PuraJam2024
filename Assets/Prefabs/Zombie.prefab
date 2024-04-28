@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   damage: 10
+  enemyAnimator: {fileID: 2162893859460811479}
 --- !u!114 &6764131917447370623
 MonoBehaviour:
   m_ObjectHideFlags: 0

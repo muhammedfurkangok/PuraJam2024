@@ -45,6 +45,9 @@ public class GunManager : MonoBehaviour
            if(enemy != null)
            {
                enemy.TakeDamage(damage);
+               GameObject GO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+               Destroy(GO, 2f);
+
            }
            if(hit.rigidbody != null)
            {
@@ -55,8 +58,6 @@ public class GunManager : MonoBehaviour
         bulletGO.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 1000f);
         Destroy(bulletGO, 2f);
         
-        GameObject GO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-        Destroy(GO, 2f);
-
+      
     }
 }
