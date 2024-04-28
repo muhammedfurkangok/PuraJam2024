@@ -28,6 +28,7 @@ public class PlayerMovementController : MonoBehaviour
     private bool _hasAnimator;
     private int _xVelocityHash;
     private int _zVelocityHash;
+    private int _yRotationHash ;
     private float _xRotation ;
 
     private const float _walkSpeed = 2f;
@@ -48,6 +49,7 @@ public class PlayerMovementController : MonoBehaviour
         {
             _xVelocityHash = Animator.StringToHash("X_Velocity");
             _zVelocityHash = Animator.StringToHash("Y_Velocity");
+            _yRotationHash = Animator.StringToHash("Y_Rotation");
         }
     }
 
@@ -105,16 +107,18 @@ public class PlayerMovementController : MonoBehaviour
         if(!_hasAnimator) return;
 
         var Mouse_X =Input.GetAxis("Mouse X");
-        var Mouse_Y = Input.GetAxis("Mouse Y") ;
+        var Mouse_Y = Input.GetAxis("Mouse Y");
+        
         // Camera.position = CameraRoot.position;
+        //arms.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
+        // Camera.localRotation = Quaternion.Euler(_xRotation, 0 , 0);
        
+        
             
         _xRotation -= Mouse_Y * MouseSensitivity * Time.smoothDeltaTime;
         _xRotation = Mathf.Clamp(_xRotation, UpperLimit, BottomLimit);
 
         eyes.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
-        //arms.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
-        // Camera.localRotation = Quaternion.Euler(_xRotation, 0 , 0);
         playerRigidbody.MoveRotation(playerRigidbody.rotation * Quaternion.Euler(0, Mouse_X * MouseSensitivity * Time.smoothDeltaTime, 0));
     }
 
