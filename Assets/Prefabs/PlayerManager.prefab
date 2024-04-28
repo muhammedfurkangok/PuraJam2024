@@ -16044,8 +16044,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.13600004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5634908920650612545}
+  m_Children: []
   m_Father: {fileID: 6529473909910263148}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5057872141121239406
@@ -16642,7 +16641,7 @@ Transform:
   m_GameObject: {fileID: 5897905667918304920}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.96000004, z: 0}
+  m_LocalPosition: {x: 0, y: -0.824, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16651,7 +16650,7 @@ Transform:
   - {fileID: 7203296148088909174}
   - {fileID: 7715146622991875956}
   - {fileID: 1487063047377143596}
-  m_Father: {fileID: 4356143173487920954}
+  m_Father: {fileID: 6529473909910263148}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8125695656856887795
 Animator:
@@ -17057,6 +17056,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5634908920650612545}
   - {fileID: 4356143173487920954}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17077,7 +17077,6 @@ MonoBehaviour:
   syncInterval: 0
   Camera: {fileID: 8514953917321095812}
   CameraRoot: {fileID: 7360811365521905310}
-  MouseSensitivity: 100
   UpperLimit: -40
   BottomLimit: 70
   eyes: {fileID: 8799102973600585097}
