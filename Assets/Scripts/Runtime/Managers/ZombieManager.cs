@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Runtime.Controllers;
@@ -72,18 +73,23 @@ public class ZombieManager : MonoBehaviour
     private async void AttackPlayer()
     {
         if(isAttacking) return;
-        playerController.TakeDamage(20);
+        
 
         enemyNavMeshAgent.SetDestination(transform.position);
         TurnToPlayer();
-        
+    
         isAttacking = true;
         transform.LookAt(player);
+
+        // Bekleme işlemi başlatılıyor
+        await  UniTask.Delay(TimeSpan.FromSeconds(2.63f));
+
+        // Beklemenin ardından animasyon değiştiriliyor
         ChangeAnimation(attack);
-        //wait until animation end
-        await UniTask.WaitForSeconds(02.63f);
+
         isAttacking = false;
     }
+
 
     private void ChasePlayer()
     {
