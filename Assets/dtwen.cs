@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -9,10 +10,14 @@ public class dtwen : MonoBehaviour
 
     [SerializeField] Cinemachine.CinemachineVirtualCamera vcam1;
 
+    private void Start()
+    {
+        vcam1.Priority = -1;
+    }
+
     public void SwapCams()
     {
         vcam1.Priority = 101;
-
     }
     public void PlayCutscene()
     {
