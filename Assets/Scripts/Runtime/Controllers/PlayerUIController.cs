@@ -12,7 +12,11 @@ namespace Runtime.Controllers
       {
          base.OnStartClient();
 
-         if (!NetworkServer.activeHost) enabled = false;
+         if (!NetworkServer.activeHost)
+         {
+            _promptText.text = "";
+            enabled = false;
+         }
       }
 
       public void UpdateUI(string promtMessage)

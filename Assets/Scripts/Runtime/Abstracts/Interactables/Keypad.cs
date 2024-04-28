@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Runtime.Abstracts;
 using UnityEngine;
 
 public class Keypad : Interactable

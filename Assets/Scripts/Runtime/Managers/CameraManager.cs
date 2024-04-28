@@ -7,6 +7,7 @@ namespace Runtime.Managers
     public class CameraManager : NetworkBehaviour
     {
         [Header("References")]
+        [SerializeField] private Canvas crosshair;
         [SerializeField] private CinemachineVirtualCamera playerCamera;
         [SerializeField] private CinemachineVirtualCamera[] cameras;
 
@@ -28,7 +29,12 @@ namespace Runtime.Managers
             for (var i = 0; i < cameras.Length; i++) cameras[i].Priority = i == 0 ? 1 : 0;
             activeCamera = cameras[index];
 
-            if (NetworkServer.activeHost) enabled = false;
+            if (NetworkServer.activeHost)
+            {
+                enabled = false;
+                crosshair.enabled = false;
+            }
+
             else playerCamera.Priority = 0;
         }
 

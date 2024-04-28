@@ -119,8 +119,6 @@ GameObject:
   - component: {fileID: 23240524022881482}
   - component: {fileID: 64522215438127986}
   - component: {fileID: 64949968090404992}
-  - component: {fileID: 104524548762223493}
-  - component: {fileID: 4473842011409928170}
   m_Layer: 0
   m_Name: SM_Bld_Wall_Doorframe_02
   m_TagString: Untagged
@@ -238,30 +236,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: d15e6ce658984be4dba714b6201bc4d3, type: 3}
---- !u!114 &104524548762223493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1543695114780030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8a0bc78ebc249742a8302d8155665a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door: {fileID: 4871574090082970}
---- !u!114 &4473842011409928170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1543695114780030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ce2224dd5587634cba9efd7fba1a0eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  promptMessage: Install Device
-  interactDuration: 3
