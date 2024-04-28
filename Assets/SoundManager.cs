@@ -5,8 +5,9 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
-
-    [SerializeField] private AudioSource _audioSource;
+    public AudioClip[] musicSounds, sfxSounds;
+    public AudioSource musicSource, sfxSource;
+    
     
 
     private void Awake()
@@ -21,9 +22,5 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(AudioClip clip)
-    {
-        _audioSource.PlayOneShot(clip);
-    }
 
 }

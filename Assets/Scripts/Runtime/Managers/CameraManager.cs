@@ -1,13 +1,17 @@
 using Cinemachine;
 using Mirror;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Runtime.Managers
 {
     public class CameraManager : NetworkBehaviour
     {
         [Header("References")]
-        [SerializeField] private Canvas crosshair;
+        public Canvas crosshairCanvas;
+        public Image crosshair;
+        public TextMeshProUGUI keyText;
         [SerializeField] private CinemachineVirtualCamera playerCamera;
         [SerializeField] private CinemachineVirtualCamera[] cameras;
 
@@ -32,7 +36,7 @@ namespace Runtime.Managers
             if (NetworkServer.activeHost)
             {
                 enabled = false;
-                crosshair.enabled = false;
+                crosshairCanvas.gameObject.SetActive(false);
             }
 
             else playerCamera.Priority = 0;

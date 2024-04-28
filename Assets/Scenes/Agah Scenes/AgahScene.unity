@@ -20915,6 +20915,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 813221945}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &814200194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 814200195}
+  m_Layer: 0
+  m_Name: GameEnder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &814200195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814200194}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.000000104308114}
+  m_LocalPosition: {x: -4.3129997, y: 9.425, z: 9.543}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &820551915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26365,11 +26396,6 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 86875021}
-    - target: {fileID: 2261143310067441002, guid: 41942854e40f43742851d83ed1c31985,
-        type: 3}
-      propertyPath: cameras.Array.size
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2261143310067441002, guid: 41942854e40f43742851d83ed1c31985,
         type: 3}
       propertyPath: cameras.Array.data[0]
@@ -55924,3 +55950,4 @@ SceneRoots:
   - {fileID: 289536679}
   - {fileID: 836398777}
   - {fileID: 512823173}
+  - {fileID: 814200195}

@@ -1,8 +1,8 @@
 using Cinemachine;
 using Mirror;
+using Runtime.Abstracts;
 using Runtime.Managers;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Runtime.Controllers
 {
@@ -11,7 +11,6 @@ namespace Runtime.Controllers
         [Header("References")]
         [SerializeField] private CinemachineVirtualCamera virtualCamera;
         [SerializeField] private LayerMask interactLayerMask;
-        [SerializeField] private Image crosshair;
 
         [Header("Limits")]
         [SerializeField] private float minY = -90f;
@@ -66,14 +65,17 @@ namespace Runtime.Controllers
             {
                 // If the ray hit something, this code will be executed
                 //Debug.Log("Ray hit: " + hit.collider.gameObject.name);
-                crosshair.color = Color.red;
+                CameraManager.Instance.keyText.enabled = true;
+                CameraManager.Instance.crosshair.color = Color.red;
+                if (Input.GetKeyDown(KeyCode.W)) hit.collider.GetComponent<Interactable>().BaseInteract();
             }
 
             // If the ray didn't hit anything, this code will be executed
             else
             {
                 //Debug.Log("Ray didn't hit anything");
-                crosshair.color = Color.white;
+                CameraManager.Instance.keyText.enabled = false;
+                CameraManager.Instance.crosshair.color = Color.white;
             }
         }
     }
