@@ -5,9 +5,18 @@ public class dtwen : MonoBehaviour
 {
     public Transform[] waypoints1;
     public Vector3[] waypoints;
-[SerializeField] private Ease Ease;
-    private void Start()
+    [SerializeField] private Ease Ease;
+
+    [SerializeField] Cinemachine.CinemachineVirtualCamera vcam1;
+
+    public void SwapCams()
     {
+        vcam1.Priority = 101;
+
+    }
+    public void PlayCutscene()
+    {
+
         waypoints = new Vector3[waypoints1.Length];
         
         for (int i = 0; i < waypoints1.Length; i++)
