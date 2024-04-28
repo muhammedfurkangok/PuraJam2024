@@ -15600,6 +15600,7 @@ Transform:
   - {fileID: 7999040118356372978}
   - {fileID: 3639977517647811237}
   - {fileID: 304940228926807755}
+  - {fileID: 1307049907938177340}
   m_Father: {fileID: 6736403140852932050}
   m_LocalEulerAnglesHint: {x: 0, y: -26.49, z: 0}
 --- !u!33 &4336204811115756666
@@ -15694,9 +15695,9 @@ MonoBehaviour:
   impactForce: 30
   fireRate: 5
   nextTimeToFire: 0
+  bulletSpawn: {fileID: 1307049907938177340}
   cam: {fileID: 1353076018827485500}
   muzzleFlash: {fileID: 19859660, guid: fee5a85360b1a204cb63eeb3985e8d99, type: 3}
-  impactEffect: {fileID: 167524, guid: fdac75e990da47649b31f10049c400b0, type: 3}
   bullet: {fileID: 135146, guid: b79841d82f4b1f6499d7f44697afdcbd, type: 3}
 --- !u!114 &761935917423543724
 MonoBehaviour:
@@ -16801,6 +16802,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5634908920650612545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6945394636344026592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1307049907938177340}
+  m_Layer: 3
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1307049907938177340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6945394636344026592}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0.404}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1679029085425281221}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7040144381154657811
 GameObject:
   m_ObjectHideFlags: 0
@@ -17529,9 +17561,9 @@ MonoBehaviour:
   impactForce: 30
   fireRate: 12
   nextTimeToFire: 0
+  bulletSpawn: {fileID: 0}
   cam: {fileID: 1353076018827485500}
   muzzleFlash: {fileID: 19859660, guid: fee5a85360b1a204cb63eeb3985e8d99, type: 3}
-  impactEffect: {fileID: 167524, guid: fdac75e990da47649b31f10049c400b0, type: 3}
   bullet: {fileID: 135146, guid: b79841d82f4b1f6499d7f44697afdcbd, type: 3}
 --- !u!1 &8295533992487520638
 GameObject:

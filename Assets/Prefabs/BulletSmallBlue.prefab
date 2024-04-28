@@ -4786,6 +4786,7 @@ GameObject:
   - component: {fileID: 6649172637893728210}
   - component: {fileID: 7964589926703045236}
   - component: {fileID: -5597420280145785844}
+  - component: {fileID: 1081489165374835343}
   m_Layer: 0
   m_Name: BulletSmallBlue
   m_TagString: Untagged
@@ -9735,6 +9736,20 @@ MonoBehaviour:
   rotationSensitivity: 0.01
   positionPrecision: 0.01
   scalePrecision: 0.01
+--- !u!114 &1081489165374835343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75d9deffe44343843b48fb6a513cb6e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactEffect: {fileID: 167524, guid: fdac75e990da47649b31f10049c400b0, type: 3}
+  damage: 10
 --- !u!1 &191554
 GameObject:
   m_ObjectHideFlags: 0
