@@ -1,18 +1,9 @@
-﻿using System;
+﻿using Runtime.Abstracts;
 
-public class DoorInteractable : Interactable
+namespace Runtime.Utilities
 {
-    public bool isDeviceInstalled;
-    private DoorOpen doorOpen;
-
-    private void Start()
+    public class DoorInteractable : Interactable
     {
-        doorOpen = GetComponent<DoorOpen>();
-        doorOpen.InitializeDoor(this);
-    }
 
-    protected override void Interact()
-    {
-        isDeviceInstalled = true;
     }
 }

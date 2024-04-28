@@ -6857,10 +6857,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2390623840625496876, guid: 3e31b40dd2dc63541ae62c398111f0ba,
+        type: 3}
+      propertyPath: sceneId
+      value: 1388558278
+      objectReference: {fileID: 0}
     - target: {fileID: 6518087760328410557, guid: 3e31b40dd2dc63541ae62c398111f0ba,
         type: 3}
       propertyPath: promptMessage
-      value: Install Device with E Key
+      value: Locked
       objectReference: {fileID: 0}
     - target: {fileID: 6518087760328410557, guid: 3e31b40dd2dc63541ae62c398111f0ba,
         type: 3}
@@ -6935,13 +6940,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7242947590160847575, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
     - {fileID: 7243929290548648229, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
+    - {fileID: 6518087760328410557, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
+    - {fileID: 7282876221425928658, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7234991192676087593, guid: 3e31b40dd2dc63541ae62c398111f0ba,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 289536681}
+      addedObject: {fileID: 289536683}
   m_SourcePrefab: {fileID: 100100000, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
 --- !u!1 &289536680 stripped
 GameObject:
@@ -6949,8 +6956,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 289536679}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &289536681
-BoxCollider:
+--- !u!64 &289536683
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6967,9 +6974,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5.000003, y: 5, z: 0.87106013}
-  m_Center: {x: -2.5000014, y: 1.5, z: 0}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: d15e6ce658984be4dba714b6201bc4d3, type: 3}
 --- !u!1001 &303406427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11023,10 +11031,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2390623840625496876, guid: 3e31b40dd2dc63541ae62c398111f0ba,
+        type: 3}
+      propertyPath: sceneId
+      value: 381014040
+      objectReference: {fileID: 0}
     - target: {fileID: 6518087760328410557, guid: 3e31b40dd2dc63541ae62c398111f0ba,
         type: 3}
       propertyPath: promptMessage
-      value: Install Device with E Key
+      value: Locked
       objectReference: {fileID: 0}
     - target: {fileID: 6518087760328410557, guid: 3e31b40dd2dc63541ae62c398111f0ba,
         type: 3}
@@ -11098,16 +11111,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7242947590160847575, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
-    - {fileID: 7243929290548648229, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7234991192676087593, guid: 3e31b40dd2dc63541ae62c398111f0ba,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 439378249}
+      addedObject: {fileID: 439378251}
   m_SourcePrefab: {fileID: 100100000, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
 --- !u!1 &439378248 stripped
 GameObject:
@@ -11115,8 +11126,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 439378247}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &439378249
-BoxCollider:
+--- !u!64 &439378251
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11133,9 +11144,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5.000003, y: 5, z: 0.87106013}
-  m_Center: {x: -2.5000014, y: 1.5, z: 0}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: d15e6ce658984be4dba714b6201bc4d3, type: 3}
 --- !u!1001 &449041835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20470,10 +20482,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2390623840625496876, guid: 3e31b40dd2dc63541ae62c398111f0ba,
+        type: 3}
+      propertyPath: sceneId
+      value: 2279465790
+      objectReference: {fileID: 0}
     - target: {fileID: 6518087760328410557, guid: 3e31b40dd2dc63541ae62c398111f0ba,
         type: 3}
       propertyPath: promptMessage
-      value: Install Device with E Key
+      value: Locked
       objectReference: {fileID: 0}
     - target: {fileID: 6518087760328410557, guid: 3e31b40dd2dc63541ae62c398111f0ba,
         type: 3}
@@ -20548,13 +20565,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7242947590160847575, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
     - {fileID: 7243929290548648229, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
+    - {fileID: 6518087760328410557, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
+    - {fileID: 7282876221425928658, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7234991192676087593, guid: 3e31b40dd2dc63541ae62c398111f0ba,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 806552364}
+      addedObject: {fileID: 806552366}
   m_SourcePrefab: {fileID: 100100000, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
 --- !u!1 &806552363 stripped
 GameObject:
@@ -20562,8 +20581,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 806552362}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &806552364
-BoxCollider:
+--- !u!64 &806552366
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -20580,9 +20599,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5.000003, y: 5, z: 0.87106013}
-  m_Center: {x: -2.5000014, y: 1.5, z: 0}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: d15e6ce658984be4dba714b6201bc4d3, type: 3}
 --- !u!1001 &806972025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21452,10 +21472,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2390623840625496876, guid: 3e31b40dd2dc63541ae62c398111f0ba,
+        type: 3}
+      propertyPath: sceneId
+      value: 3549459840
+      objectReference: {fileID: 0}
     - target: {fileID: 6518087760328410557, guid: 3e31b40dd2dc63541ae62c398111f0ba,
         type: 3}
       propertyPath: promptMessage
-      value: Install Device with E Key
+      value: Locked
       objectReference: {fileID: 0}
     - target: {fileID: 6518087760328410557, guid: 3e31b40dd2dc63541ae62c398111f0ba,
         type: 3}
@@ -21530,13 +21555,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7242947590160847575, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
     - {fileID: 7243929290548648229, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
+    - {fileID: 6518087760328410557, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
+    - {fileID: 7282876221425928658, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7234991192676087593, guid: 3e31b40dd2dc63541ae62c398111f0ba,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 836398779}
+      addedObject: {fileID: 836398781}
   m_SourcePrefab: {fileID: 100100000, guid: 3e31b40dd2dc63541ae62c398111f0ba, type: 3}
 --- !u!1 &836398778 stripped
 GameObject:
@@ -21544,8 +21571,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 836398777}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &836398779
-BoxCollider:
+--- !u!64 &836398781
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -21562,9 +21589,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5.000003, y: 5, z: 0.87106013}
-  m_Center: {x: -2.5000014, y: 1.5, z: 0}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: d15e6ce658984be4dba714b6201bc4d3, type: 3}
 --- !u!1001 &841704194
 PrefabInstance:
   m_ObjectHideFlags: 0

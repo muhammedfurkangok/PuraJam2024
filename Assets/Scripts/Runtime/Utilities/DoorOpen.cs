@@ -1,35 +1,14 @@
 using DG.Tweening;
-using System;
-using UnityEngine;
+using Mirror;
 
-public class DoorOpen : MonoBehaviour
+namespace Runtime.Utilities
 {
-    [SerializeField] private Transform door;
-    private DoorInteractable doorInteractable;
-
-    public event Action OnDoorOpened;
-    public event Action OnDoorFail;
-
-    public void InitializeDoor(DoorInteractable doorInteractable)
+    public class DoorOpen : NetworkBehaviour
     {
-        this.doorInteractable = doorInteractable;
-    }
-
-    public void TryOpenDoor()
-    {
-        if(doorInteractable.isDeviceInstalled)
+        [Command(requiresAuthority = false)]
+        private void OpenDoor()
         {
-            OpenDoor();
-            OnDoorOpened?.Invoke();
+            transform.DOMoveY(transform.position.y + 3f, 3f);
         }
-        else
-        {
-            OnDoorFail?.Invoke();
-        }
-    }
-
-    private void OpenDoor()
-    {
-        door.DOMoveY(door.position.y + 3f, 3f);
     }
 }
