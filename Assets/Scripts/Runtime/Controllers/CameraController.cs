@@ -1,10 +1,11 @@
 using Cinemachine;
+using Mirror;
 using Runtime.Managers;
 using UnityEngine;
 
 namespace Runtime.Controllers
 {
-    public class CameraController : MonoBehaviour
+    public class CameraController : NetworkBehaviour
     {
         [Header("References")]
         [SerializeField] private CinemachineVirtualCamera virtualCamera;
@@ -18,6 +19,8 @@ namespace Runtime.Controllers
         private void Start()
         {
             rotationY = transform.eulerAngles.y;
+
+            if (!NetworkServer.activeHost) enabled = false;
         }
 
         private void Update()
