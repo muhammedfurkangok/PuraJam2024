@@ -31,9 +31,8 @@ namespace Runtime.Controllers
             RaycastHit hit; 
             if (Physics.Raycast(ray, out hit, interactDistance, interactLayerMask))
             {
-                if(hit.collider.GetComponent<Interactable>() != null)
+                if(hit.collider.TryGetComponent<Interactable>(out Interactable interactable))
                 {
-                    Interactable interactable = hit.collider.GetComponent<Interactable>();
                    playerUIController.UpdateUI(interactable.promptMessage);
                    if(Input.GetKeyDown(KeyCode.E))
                    {
