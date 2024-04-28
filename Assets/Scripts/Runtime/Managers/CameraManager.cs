@@ -6,7 +6,9 @@ namespace Runtime.Managers
 {
     public class CameraManager : NetworkBehaviour
     {
-        [Header("References")] [SerializeField] private CinemachineVirtualCamera[] cameras;
+        [Header("References")]
+        [SerializeField] private CinemachineVirtualCamera playerCamera;
+        [SerializeField] private CinemachineVirtualCamera[] cameras;
 
         [Header("Info - No Touch")]
         public CinemachineVirtualCamera activeCamera;
@@ -30,7 +32,8 @@ namespace Runtime.Managers
         {
             base.OnStartClient();
 
-            if (!NetworkServer.activeHost) enabled = false;
+            if (NetworkServer.activeHost) enabled = false;
+            else playerCamera.Priority = 0;
         }
 
         private void Update()

@@ -16833,7 +16833,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3324216809776910682}
-  - component: {fileID: 3359152103443032300}
   - component: {fileID: 8730206814940324597}
   - component: {fileID: 1323866942394289738}
   m_Layer: 0
@@ -25466,19 +25465,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3381077493035117608}
   m_Mesh: {fileID: 4300000, guid: efd6c466ee20cae449f6a2b41ee09519, type: 3}
---- !u!114 &3359152103443032300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049059175859589240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf478981e3569c47b406c8ea198cf0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _promptText: {fileID: 0}
 --- !u!4 &3362969205561277293
 Transform:
   m_ObjectHideFlags: 0

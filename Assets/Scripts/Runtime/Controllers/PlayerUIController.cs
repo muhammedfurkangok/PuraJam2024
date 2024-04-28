@@ -1,11 +1,23 @@
+using Mirror;
 using TMPro;
 using UnityEngine;
 
-public class PlayerUIController : MonoBehaviour
+namespace Runtime.Controllers
 {
-   [SerializeField] private TextMeshProUGUI _promptText;
-   public void UpdateUI(string promtMessage)
+   public class PlayerUIController : NetworkBehaviour
    {
-      _promptText.text = promtMessage;
+      [SerializeField] private TextMeshProUGUI _promptText;
+
+      public override void OnStartClient()
+      {
+         base.OnStartClient();
+
+         if (!NetworkServer.activeHost) enabled = false;
+      }
+
+      public void UpdateUI(string promtMessage)
+      {
+         _promptText.text = promtMessage;
+      }
    }
 }

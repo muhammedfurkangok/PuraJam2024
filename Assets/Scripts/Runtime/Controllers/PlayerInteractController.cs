@@ -1,16 +1,23 @@
-using System;
 using Cinemachine;
+using Mirror;
 using UnityEngine;
 
 namespace Runtime.Controllers
 {
-    public class PlayerInteractController : MonoBehaviour
+    public class PlayerInteractController : NetworkBehaviour
     {
         [SerializeField] private CinemachineVirtualCamera cam;
         [SerializeField] private float interactDistance = 5f;
         [SerializeField] private LayerMask interactLayerMask;
         
         [SerializeField] private PlayerUIController playerUIController;
+
+        public override void OnStartClient()
+        {
+            base.OnStartClient();
+
+            if (!NetworkServer.activeHost) enabled = false;
+        }
 
         private void Update()
         {

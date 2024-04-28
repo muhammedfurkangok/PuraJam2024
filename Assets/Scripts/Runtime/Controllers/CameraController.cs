@@ -20,7 +20,7 @@ namespace Runtime.Controllers
         {
             rotationY = transform.eulerAngles.y;
 
-            if (!NetworkServer.activeHost) enabled = false;
+            if (NetworkServer.activeHost) enabled = false;
         }
 
         private void Update()
