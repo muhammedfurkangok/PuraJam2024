@@ -128,6 +128,7 @@ MonoBehaviour:
   health: 100
   damage: 10
   enemyAnimator: {fileID: 2162893859460811479}
+  zombieManager: {fileID: 6764131917447370623}
 --- !u!114 &6764131917447370623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyNavMeshAgent: {fileID: 2260470026575246388}
-  player: {fileID: 0}
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
@@ -156,6 +156,8 @@ MonoBehaviour:
   isAlerted: 0
   enemyAnimator: {fileID: 2162893859460811479}
   alertPlace: {fileID: 0}
+  playerController: {fileID: 0}
+  player: {fileID: 0}
 --- !u!65 &412764982621590915
 BoxCollider:
   m_ObjectHideFlags: 0
