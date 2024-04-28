@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
+    
+    [SerializeField] private Transform Camera;
+    [SerializeField] private Transform CameraRoot;
+    [SerializeField] private float MouseSensitivity = 100f;
+    [SerializeField] private float UpperLimit = -40f;
+    [SerializeField] private float BottomLimit = 70f;
+    [SerializeField] private GameObject eyes;
+    [SerializeField] private GameObject arms;
+    
+    
     [SerializeField] private float AnimBlendSpeed = 8.9f;
     [SerializeField] private Rigidbody playerRigidbody;
     [SerializeField] private Animator animator; 
@@ -18,6 +28,7 @@ public class PlayerMovementController : MonoBehaviour
     private bool _hasAnimator;
     private int _xVelocityHash;
     private int _zVelocityHash;
+    private float _xRotation ;
 
     private const float _walkSpeed = 2f;
     private const float _runSpeed = 6f;
@@ -30,6 +41,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         _hasAnimator = animator != null;
         Debug.Log(animator);
         if (_hasAnimator)
@@ -59,7 +71,7 @@ public class PlayerMovementController : MonoBehaviour
         }
         
         Move();
-        
+        CamMovements();
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
@@ -88,4 +100,22 @@ public class PlayerMovementController : MonoBehaviour
 
         playerRigidbody.velocity = _velocity;
     }
+    private void CamMovements()
+    {
+        if(!_hasAnimator) return;
+
+        var Mouse_X =Input.GetAxis("Mouse X");
+        var Mouse_Y = Input.GetAxis("Mouse Y") ;
+        // Camera.position = CameraRoot.position;
+       
+            
+        _xRotation -= Mouse_Y * MouseSensitivity * Time.smoothDeltaTime;
+        _xRotation = Mathf.Clamp(_xRotation, UpperLimit, BottomLimit);
+
+        eyes.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
+        //arms.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
+        // Camera.localRotation = Quaternion.Euler(_xRotation, 0 , 0);
+        playerRigidbody.MoveRotation(playerRigidbody.rotation * Quaternion.Euler(0, Mouse_X * MouseSensitivity * Time.smoothDeltaTime, 0));
+    }
+
 }
