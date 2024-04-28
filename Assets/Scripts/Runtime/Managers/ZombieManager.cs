@@ -1,12 +1,9 @@
-using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Runtime.Controllers;
-using Sirenix.OdinInspector;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
+
 using Random = UnityEngine.Random;
 
 public class ZombieManager : MonoBehaviour
@@ -59,35 +56,18 @@ public class ZombieManager : MonoBehaviour
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        playerInAttackRangeAlerted = Physics.CheckSphere(transform.position, alertedAttackRange, whatIsPlayer);
-        playerInSightRangeAlerted = Physics.CheckSphere(transform.position, alertedSightRange, whatIsPlayer);
         
-        if (!isAlerted)
-        {
             if (!playerInSightRange && !playerInAttackRange) 
                 Patroling();
             else if (playerInSightRange && !playerInAttackRange) 
                 ChasePlayer();
             else if (playerInSightRange && playerInAttackRange) 
                 AttackPlayer();
-        }
-        else // If alerted
-        {
-            if (!playerInSightRange) 
-                GoToAlertPlace();
-            else if (playerInSightRangeAlerted) 
-                ChasePlayer();
-            else if (playerInAttackRangeAlerted) 
-                AttackPlayer();
-        }
+        
+       
     }
 
-    [Button]
-    private void GoToAlertPlace()
-    {
-        ChangeAnimation(walk);
-        enemyNavMeshAgent.SetDestination(alertPlace.transform.position);
-    }
+    
 
     private async void AttackPlayer()
     {

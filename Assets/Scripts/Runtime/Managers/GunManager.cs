@@ -46,9 +46,10 @@ public class GunManager : NetworkBehaviour
         GameObject bulletGO = Instantiate(bullet, bulletSpawn.position, cam.transform.rotation);
         bulletGO.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 1000f);
         NetworkServer.Spawn(bulletGO);
-
+       
         await UniTask.WaitForSeconds(2f);//
         Destroy(bulletGO);
         NetworkServer.Destroy(bulletGO);
+       
     }
 }

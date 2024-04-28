@@ -21,6 +21,8 @@ namespace Runtime.Controllers
         [SerializeField] private float speed = 12f;
         [SerializeField] private float gravity = -9.81f;
         [SerializeField] private float jumpHeight = 3f;
+        [SerializeField] private AudioSource walkSound;
+       
 
         [SerializeField] private Transform groundCheck;
         [SerializeField] private float groundDistance = 0.4f;
@@ -79,6 +81,11 @@ namespace Runtime.Controllers
                 _velocity.y = -2f;
             }
 
+            if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
+            {
+                if (walkSound != null)
+                    walkSound.Play();  
+            }
             CamMovements();
             Move();
 
@@ -110,6 +117,9 @@ namespace Runtime.Controllers
 
         private void Move()
         {
+            
+          
+            
             var targetSpeed = isRunning ? _runSpeed : _walkSpeed;
             if (!isMoving) targetSpeed = 0.1f;
 
