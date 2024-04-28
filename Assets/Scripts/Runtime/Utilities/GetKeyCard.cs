@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Runtime.Abstracts;
+using UnityEngine;
 
 public class GetKeyCard : Interactable
 {
