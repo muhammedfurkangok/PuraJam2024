@@ -5,6 +5,7 @@ namespace Runtime.Controllers
     public class BulletTriggerController : MonoBehaviour
     {
         [SerializeField] private GameObject impactEffect;
+        [SerializeField] private Vector3 impactEffectOffset;
         public float damage = 10f;
 
         private void OnTriggerEnter(Collider other)
@@ -16,6 +17,7 @@ namespace Runtime.Controllers
                 enemy.TakeDamage(damage);
 
                 GameObject GO = Instantiate(impactEffect, enemy.transform);
+                GO.transform.position = enemy.transform.position + impactEffectOffset;
                 Destroy(GO, 2f);
                 Destroy(gameObject);
             }

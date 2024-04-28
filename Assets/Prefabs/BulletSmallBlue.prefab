@@ -9677,7 +9677,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -9749,6 +9749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impactEffect: {fileID: 167524, guid: fdac75e990da47649b31f10049c400b0, type: 3}
+  impactEffectOffset: {x: 0, y: 1, z: 0}
   damage: 10
 --- !u!1 &191554
 GameObject:
