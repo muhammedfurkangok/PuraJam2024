@@ -6,6 +6,6 @@ public class Keypad : Interactable
 {
     protected override void Interact()
     {
-        Debug.Log("Keypad Interacted");
+        ZombieSignals.Instance.OnZombiesAlerted?.Invoke();
     } 
 }

@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: c9ac8409c7730cb499ea06664510a827
   - enabled: 1
+    path: Assets/Scenes/FurkanScene.unity
+    guid: f1d5b23e03b538d44b17ac319436f396
+  - enabled: 0
     path: Assets/Scenes/OzgurTestGameScene.unity
     guid: f0894b2679f850b4bb45383437055de4
   - enabled: 1
     path: Assets/Scenes/DisconnectScene.unity
     guid: be49ee859d38fe9449efcec4aed1fc18
+  - enabled: 1
+    path: Assets/Scenes/FurkanScene.unity
+    guid: f1d5b23e03b538d44b17ac319436f396
   m_configObjects: {}
