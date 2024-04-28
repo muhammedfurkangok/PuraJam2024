@@ -5,8 +5,14 @@ namespace Runtime.Managers
     public class PauseMenuManager : MonoBehaviour
     {
         [Header("References")] [SerializeField] private Canvas canvas;
+        [Header("Info - No Touch")] public bool isGamePaused;
 
-        private bool isGamePaused;
+        public static PauseMenuManager Instance;
+        private void Awake()
+        {
+            if (Instance == null) Instance = this;
+            else Destroy(gameObject);
+        }
 
         private void Start()
         {

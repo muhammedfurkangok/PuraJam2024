@@ -9,7 +9,7 @@ namespace Runtime.Managers
         [Header("References")] [SerializeField] private CinemachineVirtualCamera[] cameras;
 
         [Header("Info - No Touch")]
-        [SerializeField] private CinemachineVirtualCamera activeCamera;
+        public CinemachineVirtualCamera activeCamera;
         [SerializeField] private int index;
 
         public static CameraManager Instance;
@@ -30,7 +30,7 @@ namespace Runtime.Managers
         {
             base.OnStartClient();
 
-            if (NetworkServer.activeHost) enabled = false;
+            if (!NetworkServer.activeHost) enabled = false;
         }
 
         private void Update()

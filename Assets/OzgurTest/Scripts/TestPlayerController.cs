@@ -11,7 +11,7 @@ namespace OzgurTest.Scripts
         {
             base.OnStartClient();
 
-            if (!NetworkServer.activeHost) enabled = false;
+            if (NetworkServer.activeHost) enabled = false;
         }
 
         void Update()
