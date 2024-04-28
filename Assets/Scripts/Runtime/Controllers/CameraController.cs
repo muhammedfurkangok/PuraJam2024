@@ -2,6 +2,7 @@ using Cinemachine;
 using Mirror;
 using Runtime.Managers;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Runtime.Controllers
 {
@@ -9,12 +10,17 @@ namespace Runtime.Controllers
     {
         [Header("References")]
         [SerializeField] private CinemachineVirtualCamera virtualCamera;
+        [SerializeField] private LayerMask interactLayerMask;
+        [SerializeField] private Image crosshair;
 
         [Header("Limits")]
         [SerializeField] private float minY = -90f;
         [SerializeField] private float maxY = 90f;
+        [SerializeField] private float minX = 5f;
+        [SerializeField] private float maxX = 20f;
 
         private float rotationY;
+        private float rotationX;
 
         private void Start()
         {
@@ -36,6 +42,39 @@ namespace Runtime.Controllers
             var euler = transform.eulerAngles;
             euler.y = rotationY;
             transform.eulerAngles = euler;
+
+            var mouseY = Input.GetAxis("Mouse Y") * PlayerPrefs.GetFloat("Sensitivity") * Time.deltaTime;
+
+            rotationX += mouseY;
+            rotationX = Mathf.Clamp(rotationX, minX, maxX);
+
+            euler = transform.eulerAngles;
+            euler.x = rotationX;
+            transform.eulerAngles = euler;
+
+            ////////////////////////////////////////////
+
+            // Create a ray that starts from the middle of the screen
+            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+
+            // Define the maximum distance the ray should check for collisions
+            float maxDistance = 100f;
+
+            // Perform the raycast
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, maxDistance, interactLayerMask))
+            {
+                // If the ray hit something, this code will be executed
+                //Debug.Log("Ray hit: " + hit.collider.gameObject.name);
+                crosshair.color = Color.red;
+            }
+
+            // If the ray didn't hit anything, this code will be executed
+            else
+            {
+                //Debug.Log("Ray didn't hit anything");
+                crosshair.color = Color.white;
+            }
         }
     }
 }
