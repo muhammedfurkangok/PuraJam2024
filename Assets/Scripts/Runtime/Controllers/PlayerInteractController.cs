@@ -37,7 +37,7 @@ namespace Runtime.Controllers
                    playerUIController.UpdateUI(interactable.promptMessage);
                    if(Input.GetKeyDown(KeyCode.E))
                    {
-                       interactable.BaseInteract();
+                       //interactable.BaseInteract();
                    }
                 }
             }
