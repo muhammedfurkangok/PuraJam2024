@@ -20,17 +20,13 @@ namespace Runtime.Managers
             if (Instance == null) Instance = this;
             else Destroy(gameObject);
         }
-        
-        private void Start()
-        {
-            for (var i = 0; i < cameras.Length; i++) cameras[i].Priority = i == 0 ? 1 : 0;
-
-            activeCamera = cameras[index];
-        }
 
         public override void OnStartClient()
         {
             base.OnStartClient();
+
+            for (var i = 0; i < cameras.Length; i++) cameras[i].Priority = i == 0 ? 1 : 0;
+            activeCamera = cameras[index];
 
             if (NetworkServer.activeHost) enabled = false;
             else playerCamera.Priority = 0;
