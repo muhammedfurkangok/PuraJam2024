@@ -8,7 +8,9 @@ using UnityEngine;
 public class DoorOpen : MonoBehaviour
 {
     [SerializeField] Transform door;
+    [SerializeField] bool easyUnlock;
     DoorInteractable doorInteractable;
+
 
     public event Action OnDoorOpened;
     public event Action OnDoorFail;
@@ -29,7 +31,7 @@ public class DoorOpen : MonoBehaviour
 
     public void TryOpenDoor()
     {
-        if(doorInteractable.isDeviceInstalled)
+        if(doorInteractable.isDeviceInstalled || easyUnlock)
         {
             OpenDoor();
             OnDoorOpened?.Invoke();
