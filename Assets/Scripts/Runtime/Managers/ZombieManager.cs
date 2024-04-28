@@ -32,15 +32,12 @@ public class ZombieManager : MonoBehaviour
 
     #region Constants
     string currentAnimation;
-    const string idle1 = "idle1";
-    const string idle2 = "idle2";
-    const string walk1 = "walk1";
-    const string run1 = "run1";
-    const string run2 = "run2";
-    const string attack1 = "attack1";
-    const string attack2 = "attack2";
-    const string die1 = "die1";
-    const string die2 = "die2";
+    const string idle = "idle";
+    const string walk = "walk";
+    const string run = "run";
+    const string attack = "attack";
+    const string die = "die";
+ 
       
     private bool isPatrolingStarted;
     private bool isPatrolingFinished;
@@ -58,7 +55,7 @@ public class ZombieManager : MonoBehaviour
     
     private void Start()
     {
-        enemyAnimator.Play(walk1);
+        enemyAnimator.Play(idle);
         ZombieSignals.Instance.OnZombiesAlerted += Alerted;
        
     }
@@ -104,7 +101,7 @@ public class ZombieManager : MonoBehaviour
     [Button]
     private void GoToAlertPlace()
     {
-        ChangeAnimation(walk1);
+        ChangeAnimation(walk);
         enemyNavMeshAgent.SetDestination(alertPlace.transform.position);
     }
 
@@ -112,15 +109,11 @@ public class ZombieManager : MonoBehaviour
     private async void AttackPlayer()
     {
         if(isAttacking) return;
-        
         isAttacking = true;
-        
-        string attackAnimation = Random.Range(0, 2) == 0 ? attack1 : attack2;
         transform.LookAt(player);
-        
-        ChangeAnimation(attackAnimation);
+        ChangeAnimation(attack);
         //wait until animation end
-        await UniTask.WaitForSeconds(attackAnimation == attack1 ? 2.63f : 4.17f);
+        await UniTask.WaitForSeconds(02.63f);
         isAttacking = false;
     }
     
@@ -129,11 +122,8 @@ public class ZombieManager : MonoBehaviour
     private void ChasePlayer()
     {
         if(isChasing) return;
-        
         isChasing = true;
-        string runAnimation = Random.Range(0, 2) == 0 ? run1 : run2;
-        ChangeAnimation(runAnimation);
-        
+        ChangeAnimation(run);
         enemyNavMeshAgent.SetDestination(player.position);
      
     }
@@ -147,7 +137,7 @@ public class ZombieManager : MonoBehaviour
         isPatrolingFinished = false;
         
         enemyNavMeshAgent.SetDestination(nextPosition);
-        ChangeAnimation(walk1);
+        ChangeAnimation(walk);
 
         await UniTask.WaitUntil(() => enemyNavMeshAgent.remainingDistance <= 0.1f);
         
@@ -155,8 +145,8 @@ public class ZombieManager : MonoBehaviour
 
         if (isPatrolingFinished)
         {
-            string idleAnimation = Random.Range(0, 2) == 0 ? idle1 : idle2;
-            ChangeAnimation(idleAnimation);
+          
+            ChangeAnimation(idle);
             await UniTask.WaitForSeconds(5);
             isPatrolingStarted = false;
             isPatrolingFinished = false;
