@@ -111,7 +111,7 @@ namespace Runtime.Controllers
             _xRotation -= mouseY * PlayerPrefs.GetFloat("Sensitivity") * Time.smoothDeltaTime;
             _xRotation = Mathf.Clamp(_xRotation, UpperLimit, BottomLimit);
 
-            eyes.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
+            //eyes.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
             //playerRigidbody.MoveRotation(playerRigidbody.rotation * Quaternion.Euler(0, Mouse_X * PlayerPrefs.GetFloat("Sensitivity") * Time.smoothDeltaTime, 0));
             transform.Rotate(Vector3.up * (mouseX * PlayerPrefs.GetFloat("Sensitivity") / 3));
         }
