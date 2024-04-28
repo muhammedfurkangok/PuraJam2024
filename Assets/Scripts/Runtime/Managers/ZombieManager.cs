@@ -1,6 +1,7 @@
 using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Runtime.Controllers;
 using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class ZombieManager : MonoBehaviour
     
     [SerializeField] public Animator enemyAnimator;
     [SerializeField] private GameObject alertPlace;
+    [SerializeField] private PlayerMovementController playerController;
 
     string currentAnimation;
     const string idle = "idle";
@@ -90,6 +92,7 @@ public class ZombieManager : MonoBehaviour
     private async void AttackPlayer()
     {
         if(isAttacking) return;
+        playerController.TakeDamage(20);
 
         enemyNavMeshAgent.SetDestination(transform.position);
         TurnToPlayer();

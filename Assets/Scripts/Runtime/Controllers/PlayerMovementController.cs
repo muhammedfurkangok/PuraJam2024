@@ -1,6 +1,8 @@
 using Mirror;
 using Runtime.Managers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 namespace Runtime.Controllers
 {
@@ -23,6 +25,12 @@ namespace Runtime.Controllers
         [SerializeField] private Transform groundCheck;
         [SerializeField] private float groundDistance = 0.4f;
         [SerializeField] private LayerMask groundMask;
+        
+        [Header("Player Health")]
+        [SerializeField] private float maxHealth = 100f;
+        [SerializeField] private float currentHealth;
+        [SerializeField] private Slider healthBar;
+        
 
         private bool _hasAnimator;
         private int _xVelocityHash;
@@ -54,6 +62,7 @@ namespace Runtime.Controllers
 
         private void Update()
         {
+           
             if (PauseMenuManager.Instance.isGamePaused) return;
 
             var x = Input.GetAxis("Horizontal");
@@ -80,6 +89,24 @@ namespace Runtime.Controllers
 
             _velocity.y += gravity * Time.deltaTime;
         }
+
+        public void TakeDamage(float damage)
+        {
+            currentHealth -= damage;
+            healthBar.value = currentHealth;
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                Die();
+                
+            }
+        }
+
+        private void Die()
+        {
+            SceneManager.LoadScene("DisconnectScene");
+        }
+
 
         private void Move()
         {

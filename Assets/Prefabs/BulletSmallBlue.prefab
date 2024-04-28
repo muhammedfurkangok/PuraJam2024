@@ -9748,7 +9748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d9deffe44343843b48fb6a513cb6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactEffect: {fileID: 167524, guid: fdac75e990da47649b31f10049c400b0, type: 3}
+  impactEffect: {fileID: 121962, guid: 8b859f6ed5d97694fb9e41bab73b55ff, type: 3}
   impactEffectOffset: {x: 0, y: 1, z: 0}
   damage: 10
 --- !u!1 &191554
