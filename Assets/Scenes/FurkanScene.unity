@@ -443,7 +443,7 @@ Transform:
   m_GameObject: {fileID: 280660279}
   serializedVersion: 2
   m_LocalRotation: {x: -0.15673788, y: -0.2797412, z: -0.035463814, w: 0.94653076}
-  m_LocalPosition: {x: -0.02547133, y: 2.6829147, z: -0.22404969}
+  m_LocalPosition: {x: -0.02547133, y: 2.6829147, z: -0.1430497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -617,6 +617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 690913967}
+  - component: {fileID: 690913968}
   m_Layer: 0
   m_Name: CoreGameSignals
   m_TagString: Untagged
@@ -639,6 +640,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 16297187}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &690913968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690913966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4152c52dbf053044b673097ea4d858d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1530748469}
+  isGamePaused: 0
 --- !u!1 &866677471
 GameObject:
   m_ObjectHideFlags: 0
@@ -4882,6 +4897,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3715879345409330879, guid: 5d1effd2ad11d7b4ba5dc78ceff8aabf,
+        type: 3}
+      propertyPath: sceneId
+      value: 3109518827
+      objectReference: {fileID: 0}
     - target: {fileID: 6494964118590139610, guid: 5d1effd2ad11d7b4ba5dc78ceff8aabf,
         type: 3}
       propertyPath: _promptText
